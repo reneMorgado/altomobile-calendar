@@ -21,7 +21,7 @@ function App() {
 
   const _evaluateCurrentDay = (day, currentDate) => (((day.getDate() === currentDate.getDate()) && (day.getMonth() === currentDate.getMonth()) && (day.getFullYear() === currentDate.getFullYear())))
 
-  const _mapDays = (data, index) => data.map((day)=>{
+  const _mapDays = (data) => data.map((day)=>{
     let currentDate = new Date(Date.now())
     let evaluation = _evaluateCurrentDay(day, currentDate)
     return <DayCard key={day} className={`container-column-${day.getDay()} ${evaluation && 'container-day-current'} container-day`} day={day}/>
