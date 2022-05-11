@@ -1,38 +1,157 @@
+* {
+  --green-color-800: #4E944F;
+  --green-color-700: #4e944f80;
+  --green-color-600: #83BD75;
+  --green-color-400: #ddefd2;
+  --green-color-300: #cfe4c07d;
+  --green-color-200: #E9EFC0;
+  --green-color-100: #fafdea54;
+
+  --blue-color-800: #2F5D62;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: var(--green-color-100);
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+}
+
+.calendar-controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.calendar-controls button {
+  padding: 15px;
+  border: 1px solid var(--green-color-800);
+  background-color: var(--green-color-200);
+  color: var(--green-color-800);
+  border-radius: 5px;
+  transition: 200ms;
+  min-width: 150px;
+  max-width: 150px;
+  width: 150px;
+}
+
+.calendar-controls h1 {
+  color: var(--green-color-800);
+}
+
+.calendar-controls button:hover {
+  border: 1px solid var(--green-color-200);
+  background-color: var(--green-color-800);
+  color: var(--green-color-200);
+  transition: 200ms;
+}
+
+.calendar-controls button:active {
+  transform: scale(.9);
+  transition: 200ms;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 13vw 13vw 13vw 13vw 13vw 13vw 13vw;
+  grid-template-rows: 3vh 15vh 15vh 15vh 15vh 15vh 15vh;
+  align-items: center;
+  flex-direction: row;
+  height: 93vh;
+  width: 91vw;
+  background-color: var(--green-color-200);
+  border: 1px solid var(--green-color-600);
+}
+
+.container-column-0 {
+  grid-column: 1 / 2;
+}
+
+.container-column-1 {
+  grid-column: 2 / 3;
+}
+
+.container-column-2 {
+  grid-column: 3 / 4;
+}
+
+.container-column-3 {
+  grid-column: 4 / 5;
+}
+
+.container-column-4 {
+  grid-column: 5 / 6;
+}
+
+.container-column-5 {
+  grid-column: 6 / 7;
+}
+
+.container-column-6 {
+  grid-column: 7 / 8;
+}
+
+.container-label {
+  border: 0.5px solid var(--green-color-600);
+  width: 100%;
+  height: 100%;
+  background-color: var(--green-color-300);
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container-day {
+  border: 0.5px solid var(--green-color-600);
+  width: 100%;
+  height: 100%;
+  background-color: var(--green-color-400);
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container-day-current {
+  border: 1px solid var(--green-color-600);
+  width: 100%;
+  height: 100%;
+  background-color: var(--green-color-700);
+  display: flex;
+  font-weight: bold;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.container-day-current span {
+  padding: 5px;
+}
+
+.container-day span {
+  padding: 5px;
+}
+
+.events {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding-top: 10%;
+}
+
+.event-card {
+  font-weight: 300;
+  font-size: 10px;
+  width: 80%;
+  margin: 1%;
+  padding: 1%;
+  border-radius: 5px;
+  border: 1px solid var(--blue-color-800);
+  text-align: center;
+  color: var(--green-color-200);
+  background-color: var(--blue-color-800);
 }
